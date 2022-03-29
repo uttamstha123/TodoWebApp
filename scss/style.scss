@@ -1,0 +1,189 @@
+@import 'config';
+
+body {
+    background: $bg-clr;
+    color: #ddd;
+    width: 100%;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+
+h1::selection,
+li::selection,
+label::selection {
+    color: #fff;
+    background-color: $bg-clr;
+}
+
+@mixin displayCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    margin: auto;
+
+}
+
+header {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', 'serif';
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.lists-container {
+    @include displayCenter(column);
+    margin-top: 2.5rem;
+
+    .search-items {
+        @include displayCenter(column);
+
+        label {
+            font-family: monospace;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            padding: .2rem .4rem;
+            border: 2px dotted rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+
+        }
+
+        input {
+            font-size: 1.2rem;
+            padding: .25rem .5rem;
+            border-radius: .5rem;
+            outline: none;
+            transition: opacity 0.5s ease;
+            border: none;
+            margin: .2rem;
+            display: none;
+            opacity: 0;
+            color: #333;
+
+            &::placeholder {
+                font-size: 1rem;
+                color: #777;
+            }
+
+            &::selection {
+                color: #fff;
+                background-color: $bg-clr;
+            }
+
+            &:focus {
+                box-shadow: 0px 0px 0.4rem .3rem rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+
+    .todo-container {
+        @include displayCenter(column);
+        margin: 1rem 0 0 0;
+        padding: .2rem 1rem;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: .25rem;
+
+        #empty-msg {
+            font-family: monospace;
+            line-height: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .todos {
+            width: 100%;
+            @include displayCenter(row);
+            justify-content: space-between;
+            // border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+            // border-left: 2px dashed rgba(255, 255, 255, 0.5);
+
+        }
+
+        .todo {
+            padding: .5rem;
+
+            li {
+                list-style: none;
+                font-family: Cambria;
+                font-size: 1.5rem;
+                margin: .5rem .5rem .5rem 0;
+
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .filter {
+            display: none;
+            pointer-events: none;
+        }
+
+        .checked {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .action-btn {
+
+            button {
+                padding: 0 .45rem;
+                font-family: monospace;
+                font-weight: bold;
+                font-size: 2rem;
+                color: $bg-clr;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                transition: all 0.2s ease;
+                border-radius: .2rem;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $bg-clr;
+                    transform: rotate(20deg);
+                }
+
+                &:first-child {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+
+    .form-group {
+        margin: auto;
+        @include displayCenter(column);
+        margin-top: 1.5rem;
+
+        label {
+            font-family: monospace;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            font-size: 1.25rem;
+            border-radius: .2rem;
+            margin-top: .5rem;
+            padding: .25rem .5rem;
+            color: #333;
+            font-weight: 400;
+
+            &::placeholder {
+                font-size: 1rem;
+                color: #aaa;
+            }
+
+            &:focus {
+                box-shadow: 0px 0px 0.4rem .3rem rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}

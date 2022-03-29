@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Todos</title>
+</head>
+
+<body></body>
+<header>
+    <h1><span class='name'></span> Todo's</h1>
+</header>
+<div class="lists-container">
+    <div class="search-items">
+        <label for="items">Search</label><br>
+        <input autocomplete='off' placeholder='search...' type="text" name='search' id='search'>
+    </div>
+    <div class="todo-container">
+        <div class="todos">
+            <div class="todo">
+                <li class='todo-lists'>Get a milk</li>
+            </div>
+            <div class="action-btn">
+                <button class='check'>+</button>
+                <button class='delete'>x</button>
+            </div>
+        </div>
+        <div class="todos">
+            <div class="todo">
+                <li class='todo-lists'>Buy a Product</li>
+            </div>
+            <div class="action-btn">
+                <button class='check'>+</button>
+                <button class='delete'>x</button>
+            </div>
+        </div>
+        <div class="todos">
+            <div class="todo">
+                <li class='todo-lists'>Return damaged items</li>
+            </div>
+            <div class="action-btn">
+                <button class='check'>+</button>
+                <button class='delete'>x</button>
+            </div>
+        </div>
+    </div>
+    <form class="form-group">
+        <label for="todos">Add Todo's...</label> <br>
+        <input autocomplete="off" placeholder='Add Here...' type="text" class='list-items' name="todos" id="todos">
+    </form>
+</div>
+<script src='./app.js'></script>
+</body>
+
+</html>
